@@ -18,10 +18,7 @@
 3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
         
         docker run -d -it --name centos7 centos:7
-        docker run -d -it --name ubuntu ubuntu:20.04
-        docker exec -it ubuntu /bin/bash
-        apt-get update
-        apt-get install python3.10
+	docker run -d -i --name ubuntu matthewfeickert/docker-python3-ubuntu:3.10.5
 
 4. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
     
@@ -54,7 +51,7 @@
 8. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь в работоспособности.
     >Работает.
 
-    ![ansible-vault](url)
+    ![ansible-vault](https://github.com/lenazve1996/08.01_netology_ansible/blob/main/img/ansible-vault.png)
 9. Посмотрите при помощи `ansible-doc` список плагинов для подключения. Выберите подходящий для работы на `control node`.
 
         ansible-doc -t connection -l
@@ -75,7 +72,7 @@
 11. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь что факты `some_fact` для каждого из хостов определены из верных `group_vars`.
     >Факты определены верно.
 
-    ![ansible on prod hosts](url)
+    ![ansible on prod hosts](https://github.com/lenazve1996/08.01_netology_ansible/blob/main/img/ansible%20on%20prod%20hosts.png)
 12. Заполните `README.md` ответами на вопросы. Сделайте `git push` в ветку `master`. В ответе отправьте ссылку на ваш открытый репозиторий с изменённым `playbook` и заполненным `README.md`.
 
 ## Необязательная часть
@@ -96,7 +93,7 @@
 3. Запустите `playbook`, убедитесь, что для нужных хостов применился новый `fact`.
     >Новый fact применился для localhost.
 
-        ![ansible-vault-password](url)
+        ![ansible-vault-password](https://github.com/lenazve1996/08.01_netology_ansible/blob/main/img/ansible-vault-password.png)
 4. Добавьте новую группу хостов `fedora`, самостоятельно придумайте для неё переменную. В качестве образа можно использовать [этот](https://hub.docker.com/r/pycontribs/fedora).
     >Добавлена.
 5. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.
