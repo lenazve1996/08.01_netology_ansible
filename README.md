@@ -18,7 +18,7 @@
 3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.
         
         docker run -d -it --name centos7 centos:7
-	docker run -d -i --name ubuntu matthewfeickert/docker-python3-ubuntu:3.10.5
+        docker run -d -i --name ubuntu matthewfeickert/docker-python3-ubuntu:3.10.5
 
 4. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.
     
